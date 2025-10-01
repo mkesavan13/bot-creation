@@ -5,8 +5,11 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "concurrently \"npx localtunnel --port 3000\" \"nodemon app.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"ssh -p 443 -R0:localhost:3000 qr@a.pinggy.io\" \"nodemon app.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-single": "./test-single-server.sh",
+    "test-multi": "./test-multi-server.sh",
+    "test-all": "./test-pingy-tunnels.sh"
   },
   "keywords": [
     "bot",
